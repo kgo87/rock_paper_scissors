@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+  </head>
+  <body>
+    <script>
+        
+        var r = 0;
+        var s = 1;
+        var p= 2;
+
+        var total_wins = 0;
+        var total_losses = 0;
+        var ties = 0;
+
+
+        for (var i=0; i<10; i++){
+            var user = prompt("Select r, p, or s ");
+            var computer = Math.floor(Math.random()*3);
+            if (computer === 0){
+                computer = "r";
+            }
+            if (computer === 1) {
+                computer = "s";
+            }
+            else {
+                computer = "p";
+            }
+
+            if (user === "r" && computer === "s" || user === "s" && computer === "p" || user === "p" && computer === "r" ) {
+                total_wins+=1
+            }
+            if (user === "s" && computer === "r" || user === "p" && computer === "s" || user === "r" && computer === "p" ) {
+                total_losses+=1
+            }
+            if (user === "r" && computer === "r" || user === "s" && computer === "s" || user === "p" && computer === "p" ) {
+                ties+=1
+            }
+
+        }
+
+        
+        alert("Total wins: "+ total_wins + " Total losses: " +total_losses + " Ties: " +  ties);
+
+
+        if (total_wins < total_losses) {
+            alert("Loser... Need to play again")
+            location.reload();
+            for (var i=0; i<10; i++){
+                var user = prompt("Select r, p, or s ");
+                var computer = Math.floor(Math.random()*3);
+                if (computer === 0){
+                    computer = "r";
+                }
+                if (computer === 1) {
+                    computer = "s";
+                }
+                else {
+                    computer = "p";
+                }
+
+                if (user === "r" && computer === "s" || user === "s" && computer === "p" || user === "p" && computer === "r" ) {
+                    total_wins+=1
+                }
+                if (user === "s" && computer === "r" || user === "p" && computer === "s" || user === "r" && computer === "p" ) {
+                    total_losses+=1
+                }
+                if (user === "r" && computer === "r" || user === "s" && computer === "s" || user === "p" && computer === "p" ) {
+                    ties+=1
+                }
+            }
+        }
+
+
+    </script>
+    
+  </body>
+</html>
